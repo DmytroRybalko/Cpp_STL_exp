@@ -33,7 +33,11 @@ int main() {
     }
 
     // Realize via algorithm
-
+    std::copy_if(allPlayers.begin(),
+                 allPlayers.end(),
+                 beginners.begin(),
+                 [](int x) { return (x < 6); }
+                );
 
     // Realize via lambda
 
