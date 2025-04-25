@@ -1,7 +1,15 @@
 #include <iostream>
 #include <list>
+#include <algorithm>
 
 using namespace std;
+
+/* void printList(std::list<int>& ulist)
+{
+    auto print = [](const int& n) { cout << n << ' '; };
+    std::cout << "Beginners scores: ";
+    std::for_each(ulist.begin(), ulist.end(), print);
+} */
 
 int main() {
     
@@ -29,17 +37,16 @@ int main() {
 
     // Realize via lambda
 
-    // Show beginners scores:
-    for (int i : beginners)
-    {
-        cout << "Beginners scores: " << i << endl;
-    }
+    // Show beginners & profy scores:
+    auto print = [](const int& n) { cout << n << ' '; };
+    
+    std::cout << "Beginners scores: ";
+    std::for_each(beginners.begin(), beginners.end(), print);
+    std::cout << endl;
 
-    // Show profi scores:
-    for (int i : prof)
-    {
-        cout << "Profy scores: " << i << endl;
-    }
-
+    std::cout << "Profy scores: ";
+    std::for_each(prof.begin(), prof.end(), print);
+    std::cout << endl;
+    
     return 0;
 }
